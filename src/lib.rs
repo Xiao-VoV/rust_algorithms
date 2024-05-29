@@ -1,8 +1,4 @@
-// pub fn add(left: usize, right: usize) -> usize {
-//     left + right
-// }
-mod bubble_sort;
-mod select_sort;
+mod sorting;
 #[cfg(test)]
 mod tests {
     use super::*;

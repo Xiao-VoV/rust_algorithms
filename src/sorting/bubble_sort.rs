@@ -13,7 +13,7 @@ where
 }
 
 #[test]
-pub fn select_sort_test() {
+pub fn bubble_sort_test() {
     let vec = vec![1, 23, 4, 2, 77, 12, 888, 45, 6, 343, 33, 09];
     println! {"{:?}",bubble_sort(vec)};
 }
