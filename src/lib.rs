@@ -1,3 +1,5 @@
+mod datastruct;
+mod design_patterns;
 mod sorting;
 #[cfg(test)]
 mod tests {
