@@ -1,3 +1,4 @@
-mod bubble_sort;
-mod insert_sort;
-mod select_sort;
+pub mod bubble_sort;
+pub mod insert_sort;
+pub mod merge_sort;
+pub mod select_sort;
