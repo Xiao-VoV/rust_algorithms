@@ -1,6 +1,6 @@
 use std::ops::DerefMut;
 
-//归并排序
+//归并排序_这段抄的
 pub fn merge_sort<T: Ord + Copy + Sized>(vec: &mut [T]) {
     if vec.len() <= 1 {
         return;
@@ -12,8 +12,8 @@ pub fn merge_sort<T: Ord + Copy + Sized>(vec: &mut [T]) {
 }
 
 fn merge<T: Ord + Copy>(vec: &mut [T], mid: usize) {
-    let left_half = vec[..mid].to_vec();
-    let right_half = vec[mid..].to_vec();
+    let left_half: Vec<T> = vec[..mid].to_vec();
+    let right_half: Vec<T> = vec[mid..].to_vec();
 
     let mut l = 0;
     let mut r = 0;
