@@ -1,20 +1,24 @@
-use std::{fmt::DebugStruct, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 //先实现一个 i32 类型的试试
 pub struct LinkedList {
     value: i32,
-    next: Option<Box<LinkedList>>,
+    //Rc 版本的链表，使用 RefCell表示这个 Option 是内部可变的，即使 LinkedList 是一个不可变引用。
+    next: RefCell<Option<Rc<LinkedList>>>,
 }
 
 impl LinkedList {
-    pub fn new(value: i32) -> Box<Self> {
-        Box::new(Self { value, next: None })
+    pub fn new(value: i32) -> Rc<Self> {
+        Rc::new(Self {
+            value,
+            next: RefCell::new(None),
+        })
     }
 
-    pub fn push_back(&mut self, node: Box<Self>) {
-        if self.next.is_some() {
-            self.next.as_mut().unwrap().push_back(node);
+    pub fn push_back(&self, node: Rc<Self>) {
+        if self.next.borrow().is_some() {
+            self.next.borrow().as_ref().unwrap().push_back(node);
         } else {
-            self.next = Some(node);
+            *self.next.borrow_mut() = Some(node);
         }
     }
 
@@ -24,8 +28,8 @@ impl LinkedList {
 
     pub fn print_list(&self) {
         print!("{}->", self.value);
-        if self.next.is_some() {
-            self.next.as_ref().unwrap().print_list();
+        if self.next.borrow().is_some() {
+            self.next.borrow().as_ref().unwrap().print_list();
         }
     }
 }
@@ -35,7 +39,7 @@ mod test {
     use super::*;
     #[test]
     pub fn list_test() {
-        let mut head = LinkedList::new(0);
+        let head = LinkedList::new(0);
         head.push_back(LinkedList::new(1));
         head.push_back(LinkedList::new(2));
         head.push_back(LinkedList::new(3));
