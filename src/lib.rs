@@ -1,6 +1,7 @@
 mod datastruct;
 mod design_patterns;
 mod object_oriented;
+mod search;
 mod sorting;
 mod thread;
 #[cfg(test)]
