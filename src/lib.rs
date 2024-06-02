@@ -1,3 +1,4 @@
+#[warn(dead_code)]
 mod datastruct;
 mod design_patterns;
 mod object_oriented;

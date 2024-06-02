@@ -1,9 +1,17 @@
-use std::{cell::RefCell, rc::Rc};
+use std::{borrow::Borrow, cell::RefCell, rc::Rc};
 //先实现一个 i32 类型的试试
 pub struct LinkedList {
     value: i32,
     //Rc 版本的链表，使用 RefCell表示这个 Option 是内部可变的，即使 LinkedList 是一个不可变引用。
     next: RefCell<Option<Rc<LinkedList>>>,
+}
+
+impl Iterator for LinkedList {
+    type Item = i32;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        Some(self.value)
+    }
 }
 
 impl LinkedList {
