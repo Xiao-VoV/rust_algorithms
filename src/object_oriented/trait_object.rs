@@ -40,6 +40,7 @@ impl Draw for SelectBox {
 #[cfg(test)]
 mod test {
     use super::*;
+    use std::mem;
 
     use super::{Button, Screen, SelectBox};
 
@@ -60,6 +61,8 @@ mod test {
             height: 222,
             options: vec!["333".to_string()],
         });
+
+        println!("size of : {}", mem::size_of::<SelectBox>());
         let vec: Vec<Box<dyn Draw>> = vec![button1, button2, selct_box1];
         let screen = Screen { components: vec };
         screen.run();
