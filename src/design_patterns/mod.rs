@@ -1,0 +1,1 @@
+mod  singleton_pattern;
