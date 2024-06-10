@@ -1,1 +1,2 @@
-mod  singleton_pattern;
+mod behavioral;
+mod singleton_pattern;
