@@ -1,3 +1,4 @@
+mod async_test;
 #[warn(dead_code)]
 mod datastruct;
 mod design_patterns;

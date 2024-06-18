@@ -82,7 +82,7 @@ mod test {
     use super::*;
     #[test]
     pub fn binary_search_test() {
-        let pos = binary_search(&mut vec![1, 2, 3, 4, 5, 6, 7, 8, 9], &8);
+        let pos = binary_search(&mut vec![30, 11, 23, 4, 20], &8);
         assert_eq!(pos.unwrap(), 7usize);
     }
 }
