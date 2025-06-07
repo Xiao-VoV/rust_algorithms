@@ -16,3 +16,10 @@ Rust 程序设计语言 中文翻译
 [Rust死灵书 中文翻译](https://nomicon.purewhite.io/) Rust死灵书中文翻译
 
 [Rust Async](https://rust-lang.github.io/async-book/)
+
+---
+
+## 时间表
+
+### 2025.6.6
+文件读取 cargo test files

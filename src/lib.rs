@@ -2,6 +2,7 @@ mod async_test;
 #[warn(dead_code)]
 mod datastruct;
 mod design_patterns;
+mod files;
 mod object_oriented;
 mod search;
 mod sorting;
